@@ -44,8 +44,7 @@ public class ArrayList implements List {
 	}
 
 	public int size() {
-
-
+		return this.tail;
 	}
 
 	public void growArray() {
