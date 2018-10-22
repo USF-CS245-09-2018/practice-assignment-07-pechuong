@@ -9,7 +9,11 @@ public class ArrayList implements List {
 	}
 
 	public void add(Object obj) {
-
+		if (this.tail + 1 < this.arr.length) {
+			this.arr[tail++] = obj;
+		} else {
+			growArray();
+		}
 
 	}
 
@@ -34,6 +38,14 @@ public class ArrayList implements List {
 	public int size() {
 
 
+	}
+
+	public void growArray() {
+		Object[] newArr = new Object[this.arr.length * 2];
+		for (int i = 0; i < this.arr.length; i++) {
+			newArr[i] = this.arr[i];
+		}
+		this.arr = newArr;
 	}
 }
 			
