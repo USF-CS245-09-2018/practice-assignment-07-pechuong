@@ -26,10 +26,11 @@ public class ArrayList implements List {
 				add(obj);
 				return;
 			}
-			for (int i = tail; i > pos; i--) {
+			for (int i = this.tail; i > pos; i--) {
 				this.arr[i] = this.arr[i - 1];
 			}
 			this.arr[pos] = obj;
+			this.tail++;
 		}
 	}
 
@@ -39,8 +40,7 @@ public class ArrayList implements List {
 	}
 
 	public Object remove(int pos) {
-		this.tail--;
-		return (pos < 0 || pos >= this.arr.length || pos > this.tail || this.tail <= 0) ? null : this.arr[tail--];
+		return (pos < 0 || pos >= this.arr.length || pos > this.tail || this.tail <= 0) ? null : this.arr[--tail];
 	}
 
 	public int size() {

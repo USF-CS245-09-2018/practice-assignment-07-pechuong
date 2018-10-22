@@ -1,3 +1,4 @@
+import java.util.Arrays;
 
 public class Practice7Test {
 	
@@ -53,11 +54,14 @@ public class Practice7Test {
 				return false;
 			}
 			
+
 			for (int i = work.length-1; i >= 0; i--) {
-				if (! list.remove(i).equals(work[i]))
+				if (! list.remove(i).equals(work[i])) {
 					return false;
+				}
 			}
 			return true;
+
 		} catch (Exception e) {
 			return false;
 		}
