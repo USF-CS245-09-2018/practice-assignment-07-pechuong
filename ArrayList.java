@@ -39,9 +39,8 @@ public class ArrayList implements List {
 	}
 
 	public Object remove(int pos) {
-
-
-
+		this.tail--;
+		return (pos < 0 || pos >= this.arr.length || pos > this.tail || this.tail <= 0) ? null : this.arr[tail--];
 	}
 
 	public int size() {
