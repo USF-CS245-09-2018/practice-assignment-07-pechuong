@@ -22,6 +22,10 @@ public class ArrayList implements List {
 			growArray();
 			add(pos, obj);
 		} else {
+			if (pos > this.tail) {
+				add(obj);
+				return;
+			}
 			for (int i = tail; i > pos; i--) {
 				this.arr[i] = this.arr[i - 1];
 			}
@@ -31,8 +35,7 @@ public class ArrayList implements List {
 
 
 	public Object get(int pos) {
-
-
+		return (pos < 0 || pos >= this.arr.length || pos > this.tail) ? null : this.arr[pos]; 
 	}
 
 	public Object remove(int pos) {
