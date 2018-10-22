@@ -13,14 +13,20 @@ public class ArrayList implements List {
 			this.arr[tail++] = obj;
 		} else {
 			growArray();
+			add(obj);
 		}
-
 	}
 
 	public void add(int pos, Object obj) {
-
-
-
+		if (pos < 0 || pos >= this.arr.length || this.tail + 1 >= this.arr.length) {
+			growArray();
+			add(pos, obj);
+		} else {
+			for (int i = tail; i > pos; i--) {
+				this.arr[i] = this.arr[i - 1];
+			}
+			this.arr[pos] = obj;
+		}
 	}
 
 
